@@ -98,10 +98,17 @@ document.addEventListener('DOMContentLoaded', function () {
     lightboxImage.src = '';
   }
 
-  document.querySelectorAll('figure img, .side-panel .side-image img').forEach(function (img) {
-    img.addEventListener('click', function () {
+  document.querySelectorAll('figure img, .side-panel .side-image').forEach(function (element) {
+    const img = element.tagName.toLowerCase() === 'img' ? element : element.querySelector('img');
+    if (!img) return;
+    element.addEventListener('click', function () {
       openLightbox(img);
     });
+  });
+
+  window.addEventListener('mousemove', function (event) {
+    document.documentElement.style.setProperty('--spot-x', event.clientX + 'px');
+    document.documentElement.style.setProperty('--spot-y', event.clientY + 'px');
   });
 
   lightbox.addEventListener('click', function (event) {

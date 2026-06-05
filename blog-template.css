@@ -62,12 +62,31 @@ body {
   line-height: 1.75;
   color: var(--text);
   background: var(--bg);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background: radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255, 255, 255, 0) 0%, rgba(15, 12, 10, 0.22) 25%, rgba(15, 12, 10, 0.48) 50%, rgba(15, 12, 10, 0.72) 90%);
+  mix-blend-mode: multiply;
+}
+
+body.styled-mode::before {
+  opacity: 1;
 }
 
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .panel {
@@ -268,13 +287,13 @@ figure {
 
 .side-panel {
   display: grid;
-  grid-template-columns: 1fr minmax(180px, 240px);
+  grid-template-columns: 1fr minmax(180px, 0.5fr);
   gap: 1.5rem;
   align-items: start;
 }
 
 .side-panel.right {
-  grid-template-columns: minmax(180px, 240px) 1fr;
+  grid-template-columns: minmax(auto-fit, 0.25fr) 1fr;
 }
 
 .side-panel .text {
