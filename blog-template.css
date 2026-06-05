@@ -159,6 +159,49 @@ figure {
   margin: 0;
 }
 
+.dialogue-section {
+  padding: 1.5rem 1.75rem;
+  border-radius: 1rem;
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.dialogue-section h2 {
+  margin-top: 0;
+}
+
+.dialogue {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.dialogue p {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.dialogue p strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent);
+}
+
+.dark-mode .dialogue-section {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+.dark-mode .dialogue p {
+  background: rgba(15, 23, 42, 0.95);
+  color: var(--text);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
 .figure-fullwidth {
   overflow: hidden;
   border-radius: 1rem;
@@ -175,6 +218,41 @@ figure {
   margin-top: 0.75rem;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.figure-parallax {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  min-height: clamp(280px, 45vh, 520px);
+  display: grid;
+  align-items: end;
+  background-image: url("example.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.figure-parallax figcaption {
+  position: relative;
+  margin: 0;
+  padding: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  font-size: 1.05rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.55) 100%);
+}
+
+@media (max-width: 640px) {
+  .figure-parallax {
+    min-height: 220px;
+    background-attachment: scroll;
+  }
+
+  .figure-parallax figcaption {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
 }
 
 .side-panel {
