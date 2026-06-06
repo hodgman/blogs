@@ -213,6 +213,8 @@ figure {
   background: rgba(255, 255, 255, 0.9);
   color: var(--text);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  float: left;
+  position: relative;
 }
 
 .dialogue p strong {
@@ -221,6 +223,45 @@ figure {
   color: var(--accent);
 }
 
+.dialogue p::before {
+  content: "";
+  float: right;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  background-image: var(--avatar);
+  background-size: cover;
+  background-position: center;
+  shape-outside: circle();
+  -webkit-shape-outside: circle();
+}
+
+.dialogue sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .dialogue p::before {
+    width: 40px;
+    height: 40px;
+  }
+  .dialogue p {
+    padding-right: 3.75rem;
+  }
+}
+@media (max-width: 420px) {
+/*
+  .dialogue p::before {
+    display: none;
+  }
+*/
+  .dialogue p {
+    padding-right: 1.1rem;
+  }
+}
 .dark-mode .dialogue-section {
   background: rgba(15, 23, 42, 0.85);
   border-color: rgba(148, 163, 184, 0.18);
