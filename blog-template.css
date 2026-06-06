@@ -169,6 +169,9 @@ article h1 {
   margin-top: 0;
   font-size: clamp(1.75rem, 3vw, 2.4rem);
 }
+h4, h3, h2, h1 {
+  margin-bottom: 0.25rem;
+}
 
 article p,
 article li {
@@ -182,7 +185,7 @@ article > * + * {
 
 .content-block {
   display: grid;
-  gap: 1.5rem;
+  /* gap: 1.5rem; */
 }
 
 figure {
@@ -295,7 +298,7 @@ figure {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  min-height: clamp(280px, 45vh, 520px);
+  min-height: clamp(180px, 12vh, 520px);
   display: grid;
   align-items: end;
   background-image: url("example.jpg");
@@ -309,7 +312,7 @@ figure {
   margin: 0;
   padding: 1.5rem;
   color: #ffffff;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 5px 3px rgba(0, 0, 0, 0.85);
   font-size: 1.05rem;
   background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.55) 100%);
 }
@@ -326,6 +329,22 @@ figure {
   }
 }
 
+.third-panel {
+  display: grid;
+  grid-template-columns: 0.33fr 0.33fr 0.33fr;
+  gap: 0;
+  align-items: start;
+}
+
+.third-panel img {
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  display: inline-block;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
 .side-panel {
   display: grid;
   grid-template-columns: 1fr minmax(180px, 0.5fr);
@@ -334,7 +353,7 @@ figure {
 }
 
 .side-panel.right {
-  grid-template-columns: minmax(auto-fit, 0.25fr) 1fr;
+  grid-template-columns: 0.25fr 1fr;
 }
 
 .side-panel .text {
