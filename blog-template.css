@@ -354,7 +354,6 @@ figure {
 
 .side-panel.right {
   grid-template-columns: minmax(180px, 0.5fr) 1fr;
-  align-items: end;
 }
 
 .side-panel .text {
