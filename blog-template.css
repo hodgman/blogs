@@ -317,18 +317,6 @@ figure {
   background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.55) 100%);
 }
 
-@media (max-width: 640px) {
-  .figure-parallax {
-    min-height: 220px;
-    background-attachment: scroll;
-  }
-
-  .figure-parallax figcaption {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-}
-
 .third-panel {
   display: grid;
   grid-template-columns: 0.33fr 0.33fr 0.33fr;
@@ -424,7 +412,7 @@ figure {
 
 .table-ledger th,
 .table-ledger td {
-  padding: 0.9rem 1rem;
+  padding: 0rem 1rem;
   border-bottom: 1px solid rgba(100, 116, 139, 0.18);
 }
 
@@ -461,4 +449,8 @@ footer {
   .side-panel {
     grid-template-columns: 1fr;
   }
+  .side-panel.right {
+    grid-template-columns: 1fr;
+  }
+
 }
